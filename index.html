@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دومينز في الساحة</title>
+<meta name="description" content="دومينز: منصة مجتمعية متنقلة تنطلق من ساحة التحرير في حلب — عرض تصوّري للكارافان المتحرك وأنشطته.">
+<meta name="theme-color" content="#000E2C">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/tajawal-arabic-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/site-reference.webp" as="image">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app" dir="rtl" lang="ar">
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#caravan" aria-label="دومينز">
+      <span class="mark"><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="#fff" d="M23 18V30A27 27 0 0 0 77 30V18H66V30A16 16 0 0 1 34 30V18Z"/><path fill="#fff" d="M21.7 82A30 30 0 0 1 78.3 82H66.2A19 19 0 0 0 33.8 82Z"/></svg></span>
+      <span><b>دومينز</b><small>منصة مجتمعية متنقلة</small></span>
+    </a>
+    <nav class="tabs" role="tablist" aria-label="أقسام العرض">
+      <i class="tab-ink" aria-hidden="true"></i>
+      <button role="tab" id="tab-caravan" aria-controls="caravan" aria-selected="true" data-tab="caravan"><span class="n">1</span><span class="full">الكارافان | فكرة الحضور</span><span class="short">الكارافان</span></button>
+      <button role="tab" id="tab-activities" aria-controls="activities" aria-selected="false" data-tab="activities"><span class="n">2</span><span class="full">الأنشطة | ماذا سنفعل؟</span><span class="short">الأنشطة</span></button>
+    </nav>
+    <span class="concept">عرض تصوّري</span>
+  </div>
+  <div class="progress"><i id="prog"></i></div>
+</header>
+
+<!-- ================= TAB 1 ================= -->
+<main id="caravan" class="deck" role="tabpanel" aria-labelledby="tab-caravan">
+
+  <section class="screen hero" data-title="الفكرة">
+    <div class="hero-bg ph ph-site" role="img" aria-label="منظور ساحة التحرير في حلب"></div>
+    <div class="wrap hero-in">
+      <div>
+        <p class="eyebrow">ساحة التحرير · حلب</p>
+        <h1>دومينز<span>منصة مجتمعية متنقلة</span></h1>
+      </div>
+      <div class="route">
+        <p class="route-label">خط السير</p>
+        <div class="route-track">
+          <i class="route-line"></i><i class="route-fill" id="routeFill"></i>
+          <span class="route-truck" id="truck" data-ico="truck"></span>
+        </div>
+        <ol class="stops" id="stops">
+          <li><button class="on" data-i="0"><i class="dot"></i><b>ساحة التحرير</b><small>نقطة الانطلاق</small></button></li>
+          <li><button data-i="1"><i class="dot"></i><b>الحديقة المجاورة</b><small>لاحقاً</small></button></li>
+          <li><button data-i="2"><i class="dot"></i><b>ساحة سعد الله الجابري</b><small>لاحقاً</small></button></li>
+          <li><button data-i="3"><i class="dot"></i><b>مواقع أخرى</b><small>لاحقاً</small></button></li>
+        </ol>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><i></i>مرّر</div>
+  </section>
+
+  <section class="screen" data-title="المركبة">
+    <div class="wrap split">
+      <div class="rv">
+        <p class="eyebrow">المفهوم</p>
+        <h2>كارافان متحرّك</h2>
+        <ul class="facts">
+          <li><span class="ic" data-ico="radio"></span>مركز حضور إعلامي وتطوعي ومجتمعي</li>
+          <li><span class="ic" data-ico="pin"></span>يتوقف في المواقع المختارة لتشغيل أنشطته</li>
+        </ul>
+      </div>
+      <figure class="photo drive-photo split-photo rv">
+        <div class="ph ph-entry" role="img" aria-label="الكارافان متوقف في الساحة"></div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="screen" data-title="المكوّنات">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">اضغط على النقاط</p><h2>مكوّنات الكارافان</h2></div></div>
+      <div class="comp">
+        <figure class="comp-stage rv"><div class="comp-img ph ph-caravan" id="compImg" role="img" aria-label="الكارافان من الجانب"></div></figure>
+        <article class="comp-card rv" aria-live="polite">
+          <div class="comp-photo ph" id="compPhoto"></div>
+          <div class="comp-body" id="compBody"></div>
+        </article>
+      </div>
+      <div class="chips" id="compChips"></div>
+    </div>
+  </section>
+
+  <section class="screen" data-title="أوضاع التشغيل">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">من لقاء صغير إلى ساحة كاملة</p><h2>أوضاع التشغيل</h2></div></div>
+      <div class="modes">
+        <div>
+          <div class="mode-pick" id="modePick" role="tablist" aria-label="أوضاع التشغيل"></div>
+          <div class="meter"><div class="meter-l"><span>حجم التشغيل</span><span id="meterTxt">1 / 4</span></div><div class="meter-bar"><i id="meter"></i></div></div>
+        </div>
+        <div class="mode-stage rv">
+                    <div class="mlayers" id="mlayers"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" data-title="التنفيذ المرحلي">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">خطة الدخول</p><h2>التنفيذ المرحلي</h2></div></div>
+      <div class="phases">
+        <article class="phase rv">
+          <span class="tag">المرحلة 1</span>
+          <h3>حضور مؤقت سريع التجهيز</h3>
+          <p>ريثما تُجهَّز المركبة</p>
+          <div class="alts" id="alts"></div>
+        </article>
+        <div class="phase-arrow" data-ico="arrow" aria-hidden="true"></div>
+        <article class="phase p2 rv">
+          <span class="tag">المرحلة 2</span>
+          <h3>الكارافان المتنقل</h3>
+          <p>بعد استكمال التصميم والتجهيز</p>
+          <button class="p2-img ph ph-caravan" id="p2img" aria-label="تكبير صورة الكارافان المتنقل"></button>
+        </article>
+      </div>
+      <a class="next-tab" href="#activities" data-go-tab="activities">التالي: الأنشطة <span data-ico="arrow"></span></a>
+    </div>
+  </section>
+</main>
+
+<!-- ================= TAB 2 ================= -->
+<main id="activities" class="deck" role="tabpanel" aria-labelledby="tab-activities" hidden>
+  <section class="screen" data-title="المحاور">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">الأنشطة</p><h2>ماذا سنفعل؟</h2></div><p class="sub">5 محاور · 19 فكرة</p></div>
+      <div class="axes" id="axes"></div>
+    </div>
+  </section>
+  <div id="axisScreens"></div>
+  <footer class="closing"><div class="wrap"><b>عرض تصوّري</b> — المقترحات قابلة للتطوير، ولا تمثّل تجهيزات منفّذة أو قرارات نهائية.</div></footer>
+</main>
+
+<nav class="rail" id="rail" aria-label="شاشات القسم"></nav>
+<div class="keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> تنقّل · <kbd>1</kbd><kbd>2</kbd> الأقسام</div>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="معاينة">
+  <div class="lb-in">
+    <div class="lb-stage"><div class="ph" id="lbImg"></div>
+      <button class="lb-nav lb-prev" id="lbPrev" aria-label="الصورة السابقة"></button>
+      <button class="lb-nav lb-next" id="lbNext" aria-label="الصورة التالية"></button>
+    </div>
+    <div class="lb-bar"><div><b id="lbTitle"></b><small id="lbCount"></small></div><div class="lb-dots" id="lbDots"></div><button class="lb-x" id="lbX" aria-label="إغلاق">×</button></div>
+  </div>
+</div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
