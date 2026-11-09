@@ -4,11 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>دومينز في الساحة</title>
-<meta name="description" content="دومينز: منصة مجتمعية متنقلة تنطلق من ساحة التحرير في حلب — عرض تصوّري للكارافان المتحرك وأنشطته.">
+<meta name="description" content="دومينز: منصة مجتمعية متنقلة تنطلق من ساحة التحرير في حلب — الكارافان، الأنشطة، والمالية.">
 <meta name="theme-color" content="#000E2C">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/tajawal-arabic-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/img/site-reference.webp" as="image">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,19 +20,33 @@
     </a>
     <nav class="tabs" role="tablist" aria-label="أقسام العرض">
       <i class="tab-ink" aria-hidden="true"></i>
-      <button role="tab" id="tab-caravan" aria-controls="caravan" aria-selected="true" data-tab="caravan"><span class="n">1</span><span class="full">الكارافان | فكرة الحضور</span><span class="short">الكارافان</span></button>
-      <button role="tab" id="tab-activities" aria-controls="activities" aria-selected="false" data-tab="activities"><span class="n">2</span><span class="full">الأنشطة | ماذا سنفعل؟</span><span class="short">الأنشطة</span></button>
+      <button role="tab" id="tab-caravan" aria-controls="caravan" aria-selected="true" data-tab="caravan"><span class="n">1</span><span class="full">الكارافان</span><span class="short">الكارافان</span></button>
+      <button role="tab" id="tab-activities" aria-controls="activities" aria-selected="false" data-tab="activities"><span class="n">2</span><span class="full">الأنشطة</span><span class="short">الأنشطة</span></button>
+      <button role="tab" id="tab-finance" aria-controls="finance" aria-selected="false" data-tab="finance"><span class="n">3</span><span class="full">المالية</span><span class="short">المالية</span></button>
     </nav>
     <span class="concept">عرض تصوّري</span>
   </div>
   <div class="progress"><i id="prog"></i></div>
 </header>
+<nav class="subnav" id="subnav" aria-label="أقسام الأنشطة">
+  <div class="wrap subnav-in">
+    <button data-sub="activities"><span class="lf">أنشطة دورية</span><span class="ls">الدورية</span><small id="cntP"></small></button>
+    <button data-sub="calendar"><span class="lf">رزنامة الأنشطة الدورية</span><span class="ls">الرزنامة</span></button>
+    <button data-sub="special"><span class="lf">أنشطة استثنائية</span><span class="ls">الاستثنائية</span><small id="cntX"></small></button>
+  </div>
+</nav>
 
 <!-- ================= TAB 1 ================= -->
 <main id="caravan" class="deck" role="tabpanel" aria-labelledby="tab-caravan">
 
   <section class="screen hero" data-title="الفكرة">
-    <div class="hero-bg ph ph-site" role="img" aria-label="منظور ساحة التحرير في حلب"></div>
+    <div class="hero-bg" role="img" aria-label="منظر علوي لساحة التحرير في حلب، يظهر فيه الكارافان وحوله ست خيام بشكل مستطيل حول نجمة الساحة">
+      <div class="hero-img ph ph-cover" id="heroImg">
+        <span class="apin" style="left:70.1%;top:54%"><i></i><b>الكارافان</b></span>
+        <span class="apin" style="left:59.2%;top:61%"><i></i><b>خيام الأنشطة</b></span>
+        <span class="apin low" style="left:70.3%;top:66.5%"><i></i><b>مساحة اللقاء</b></span>
+      </div>
+    </div>
     <div class="wrap hero-in">
       <div>
         <p class="eyebrow">ساحة التحرير · حلب</p>
@@ -98,55 +111,100 @@
                     <div class="mlayers" id="mlayers"></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="screen" data-title="التنفيذ المرحلي">
-    <div class="wrap">
-      <div class="sec-head rv"><div><p class="eyebrow">خطة الدخول</p><h2>التنفيذ المرحلي</h2></div></div>
-      <div class="phases">
-        <article class="phase rv">
-          <span class="tag">المرحلة 1</span>
-          <h3>حضور مؤقت سريع التجهيز</h3>
-          <p>ريثما تُجهَّز المركبة</p>
-          <div class="alts" id="alts"></div>
-        </article>
-        <div class="phase-arrow" data-ico="arrow" aria-hidden="true"></div>
-        <article class="phase p2 rv">
-          <span class="tag">المرحلة 2</span>
-          <h3>الكارافان المتنقل</h3>
-          <p>بعد استكمال التصميم والتجهيز</p>
-          <button class="p2-img ph ph-caravan" id="p2img" aria-label="تكبير صورة الكارافان المتنقل"></button>
-        </article>
-      </div>
       <a class="next-tab" href="#activities" data-go-tab="activities">التالي: الأنشطة <span data-ico="arrow"></span></a>
     </div>
   </section>
+
 </main>
 
 <!-- ================= TAB 2 ================= -->
 <main id="activities" class="deck" role="tabpanel" aria-labelledby="tab-activities" hidden>
   <section class="screen" data-title="المحاور">
     <div class="wrap">
-      <div class="sec-head rv"><div><p class="eyebrow">الأنشطة</p><h2>ماذا سنفعل؟</h2></div><p class="sub">5 محاور · 19 فكرة</p></div>
-      <div class="axes" id="axes"></div>
+      <div class="sec-head rv"><div><p class="eyebrow">موعد ومكان ثابتان</p><h2>الأنشطة الدورية</h2></div><p class="sub" id="actCount"></p></div>
+      <div class="axes2" id="axes"></div>
     </div>
   </section>
   <div id="axisScreens"></div>
-  <footer class="closing"><div class="wrap"><b>عرض تصوّري</b> — المقترحات قابلة للتطوير، ولا تمثّل تجهيزات منفّذة أو قرارات نهائية.</div></footer>
+</main>
+
+<main id="calendar" class="deck" role="tabpanel" aria-labelledby="tab-activities" hidden>
+  <section class="screen" data-title="رزنامة الشهر">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">مسودة · الأنشطة الدورية فقط</p><h2>كانون الأول 2026</h2></div><p class="sub cal-stats" id="calStats"></p></div>
+      <div class="cal-bar rv"><div class="cal-filters" id="calFilters" role="group" aria-label="تصفية حسب المحور"></div>
+        <div class="cal-legend"><span class="loc-sq"><i></i>الساحة</span><span class="loc-uni"><i></i>الجامعة</span><span class="loc-park"><i></i>حديقة</span><span class="loc-hood"><i></i>حي</span><span class="loc-castle"><i></i>القلعة</span></div></div>
+      <div class="cal">
+        <div class="cal-grid" id="calGrid"></div>
+        <aside class="cal-day" id="calDay" aria-live="polite"></aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<main id="special" class="deck" role="tabpanel" aria-labelledby="tab-activities" hidden>
+  <section class="screen" data-title="أنشطة استثنائية">
+    <div class="wrap ax2 ax-x">
+      <header class="ax2-side rv">
+        <span class="ax2-n">★</span>
+        <p class="eyebrow">خارج الإيقاع الدوري</p>
+        <h2>المعارض والفرص</h2>
+        <p class="ax2-tag">أنشطة تُقام مرة واحدة أو في موسم أو مناسبة، وتصنع الصدى الأكبر.</p>
+        <span class="ty x" id="cntX2"></span>
+      </header>
+      <div class="acc rv" id="accX"></div>
+    </div>
+  </section>
+  <section class="screen" data-title="الأيام العالمية">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">خارج الإيقاع الدوري</p><h2>مساحة دائمة للاستثنائي</h2></div><p class="sub">نتفاعل مع الأيام العالمية والمواسم</p></div>
+      <div class="wdays rv" id="wdays"></div>
+      <div class="seasons rv" id="seasons"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= TAB 3 ================= -->
+<main id="finance" class="deck" role="tabpanel" aria-labelledby="tab-finance" hidden>
+  <section class="screen" data-title="التكاليف الشهرية">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">المالية</p><h2>التكاليف التشغيلية الشهرية</h2></div><p class="sub">تقدير بالحد الأعلى · بالدولار الأمريكي</p></div>
+      <div class="fin">
+        <div class="fin-table rv" id="finTable"></div>
+        <aside class="fin-sum rv" id="finSum"></aside>
+      </div>
+    </div>
+  </section>
+  <section class="screen" data-title="أفكار إضافية">
+    <div class="wrap">
+      <div class="sec-head rv"><div><p class="eyebrow">خارج الحساب الشهري</p><h2>أفكار إضافية</h2></div></div>
+      <div class="extra">
+        <div class="energy rv">
+          <h3><span class="ic" data-ico="zap"></span>مصادر الطاقة</h3>
+          <ol class="esrc">
+            <li><b>شحن من دينامو السيارة</b><span>تُشحن البطاريات أثناء التنقل بين المواقع.</span></li>
+            <li><b>شحن من الشبكة في الساحة</b><span>وصلة كهرباء تشحن البطاريات وقت الوقوف.</span></li>
+            <li class="opt"><b>ألواح شمسية على السطح</b><span>مقترح اختياري، تُركّب مسطّحة فلا تظهر من الأرض.</span></li>
+          </ol>
+          <p class="enote">التشغيل عبر إنفرتر وبطاريات ليثيوم، مع مكيف إنفرتر DC موفّر.</p>
+        </div>
+        <div class="margin rv">
+          <span class="mtag">على الهامش</span>
+          <h3>أفكار للإيرادات</h3>
+          <ul>
+            <li><b>إعلانات شاشة دومينز</b><span>مساحات إعلانية قصيرة على شاشة السيارة.</span></li>
+            <li><b>رعاية المعارض والأنشطة</b><span>«معرض الشباب برعاية…»</span></li>
+          </ul>
+          <p class="mnote">تُطرح في حال الحصول على الموافقات اللازمة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="closing"><div class="wrap"><b>عرض تصوّري ومسودة اقتراح</b> — الأنشطة والأرقام قابلة للتطوير، ولا تمثّل قرارات نهائية.</div></footer>
 </main>
 
 <nav class="rail" id="rail" aria-label="شاشات القسم"></nav>
-<div class="keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> تنقّل · <kbd>1</kbd><kbd>2</kbd> الأقسام</div>
-<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="معاينة">
-  <div class="lb-in">
-    <div class="lb-stage"><div class="ph" id="lbImg"></div>
-      <button class="lb-nav lb-prev" id="lbPrev" aria-label="الصورة السابقة"></button>
-      <button class="lb-nav lb-next" id="lbNext" aria-label="الصورة التالية"></button>
-    </div>
-    <div class="lb-bar"><div><b id="lbTitle"></b><small id="lbCount"></small></div><div class="lb-dots" id="lbDots"></div><button class="lb-x" id="lbX" aria-label="إغلاق">×</button></div>
-  </div>
-</div>
+<div class="keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> تنقّل · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> الأقسام</div>
 </div>
 <script src="js/main.js"></script>
 </body>
